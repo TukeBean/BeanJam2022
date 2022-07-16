@@ -6,7 +6,7 @@ public class CubeController : MonoBehaviour
 {
     Vector3 START_POSITION = new Vector3(6, 3, 0);
     public int torqueForce = 100;
-    public float jumpForce = 0.01f;
+    public float jumpForce = 4.5f;
     public float moveSpeed = 0.008f;
     Rigidbody mRigidBody;
 
