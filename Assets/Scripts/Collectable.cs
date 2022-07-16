@@ -32,7 +32,7 @@ public class Collectable : MonoBehaviour
          if (other.name == "Cube")
          {
             GameManager.instance.collectedCollectable();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
          }
             
     }

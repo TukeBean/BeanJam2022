@@ -31,4 +31,11 @@ public class GameManager : MonoBehaviour
         Debug.Log(CollectableCount);
         thisText.text = CollectableCount + "/" + CollectableMax;
     }
+
+        public void resetCollectable()
+    {
+        CollectableCount = 0;
+        Debug.Log(CollectableCount);
+        thisText.text = CollectableCount + "/" + CollectableMax;
+    }
 }
