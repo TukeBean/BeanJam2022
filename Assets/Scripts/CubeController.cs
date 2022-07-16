@@ -6,6 +6,7 @@ public class CubeController : MonoBehaviour
 {
     Vector3 START_POSITION = new Vector3(6, 3, 0);
     public int torqueLit = 100;
+    public float jumpForce = 0.2f;
     Rigidbody mRigidBody;
 
     [Header("Player Grounded")]
@@ -13,10 +14,8 @@ public class CubeController : MonoBehaviour
     public bool Grounded = true;
     [Tooltip("Useful for rough ground")]
     public float GroundedOffset = 0.15f;
-
     [Tooltip("What layers the character uses as ground")]
     public LayerMask GroundLayers;
-
 
     // Start is called before the first frame update
     void Start()
@@ -36,23 +35,27 @@ public class CubeController : MonoBehaviour
     {
         if (Grounded && Input.GetKey(KeyCode.Space)) 
         { 
-            mRigidBody.velocity = new Vector3(0, 5, 5);
+            mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.W)) 
         { 
-            mRigidBody.AddTorque(torqueLit, 100, 0);
+            mRigidBody.AddTorque(torqueLit, 100, 0,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.forward * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.A)) 
         { 
-            mRigidBody.AddTorque(0, 100, torqueLit);
+            mRigidBody.AddTorque(0, 100, torqueLit,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.left * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.S)) 
         { 
-            mRigidBody.AddTorque(-torqueLit, 100, 0);
+            mRigidBody.AddTorque(-torqueLit, 100, 0, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.back * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.D)) 
         { 
-            mRigidBody.AddTorque(0, 100, -torqueLit);
+            mRigidBody.AddTorque(0, 100, -torqueLit, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.right * 0.01f, ForceMode.VelocityChange);
         }
 
         //reset button
