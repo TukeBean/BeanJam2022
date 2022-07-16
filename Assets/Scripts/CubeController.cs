@@ -5,8 +5,9 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     Vector3 START_POSITION = new Vector3(6, 3, 0);
-    public int torqueLit = 100;
-    public float jumpForce = 0.2f;
+    public int torqueForce = 100;
+    public float jumpForce = 0.01f;
+    public float moveSpeed = 0.008f;
     Rigidbody mRigidBody;
 
     [Header("Player Grounded")]
@@ -33,29 +34,32 @@ public class CubeController : MonoBehaviour
 
     private void Move()
     {
-        if (Grounded && Input.GetKey(KeyCode.Space)) 
+        // JUMP
+        if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
         { 
             mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, ForceMode.VelocityChange);
         }
+
+        // WASD MOVEMENT
         if (Input.GetKey(KeyCode.W)) 
         { 
-            mRigidBody.AddTorque(torqueLit, 100, 0,ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.forward * 0.01f, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(torqueForce, torqueForce, 0,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.forward * moveSpeed, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.A)) 
         { 
-            mRigidBody.AddTorque(0, 100, torqueLit,ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.left * 0.01f, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(0, torqueForce, torqueForce,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.left * moveSpeed, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.S)) 
         { 
-            mRigidBody.AddTorque(-torqueLit, 100, 0, ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.back * 0.01f, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(-torqueForce, torqueForce, 0, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.back * moveSpeed, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.D)) 
         { 
-            mRigidBody.AddTorque(0, 100, -torqueLit, ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.right * 0.01f, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(0, torqueForce, -torqueForce, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.right * moveSpeed, ForceMode.VelocityChange);
         }
 
         //reset button
