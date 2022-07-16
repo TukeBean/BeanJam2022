@@ -5,10 +5,11 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     public ForceMode forceMode = ForceMode.VelocityChange;
-    Vector3 START_POSITION = new Vector3(6, 3, 0);
+    Vector3 START_POSITION = new Vector3(0, 0, 0);
     public int torqueForce = 100;
     public float jumpForce = 4.5f;
     public float moveSpeed = 0.008f;
+    public float chungus = 2f;
     Rigidbody mRigidBody;
 
     [Header("Player Grounded")]
@@ -22,6 +23,7 @@ public class CubeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        START_POSITION = transform.position;
         mRigidBody = GetComponent<Rigidbody>();
         GroundLayers = LayerMask.GetMask("Ground");
     }
@@ -35,10 +37,18 @@ public class CubeController : MonoBehaviour
 
     private void Move()
     {
+         
         // JUMP
         if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
         { 
             mRigidBody.AddForce(Vector3.up + mRigidBody.velocity.normalized * jumpForce, forceMode);
+            if (mRigidBody.velocity.magnitude < 5)
+        {
+            mRigidBody.AddForce(new Vector3(0f,chungus,0f) + (mRigidBody.velocity * jumpForce), forceMode);
+        } else
+        {
+            mRigidBody.AddForce((mRigidBody.velocity.normalized * jumpForce), forceMode);
+        }
         }
 
         // WASD MOVEMENT
