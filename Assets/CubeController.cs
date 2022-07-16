@@ -6,6 +6,7 @@ public class CubeController : MonoBehaviour
 {
     Vector3 START_POSITION = new Vector3(6, 3, 0);
     public int torqueLit = 100;
+    public float jumpForce = 0.2f;
     Rigidbody mRigidBody;
 
     [Header("Player Grounded")]
@@ -36,11 +37,11 @@ public class CubeController : MonoBehaviour
     {
         if (Grounded && Input.GetKey(KeyCode.Space)) 
         { 
-            mRigidBody.velocity = new Vector3(0, 5, 5);
+            mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.W)) 
         { 
-            mRigidBody.AddTorque(torqueLit, 100, 0);
+            mRigidBody.AddTorque(torqueLit, 100, 0,ForceMode.Impulse);
         }
         if (Input.GetKey(KeyCode.A)) 
         { 

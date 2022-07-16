@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bouncy Shit
+  m_Name: CubeMatBounce
   dynamicFriction: 1
   staticFriction: 3.87
-  bounciness: 0.5
+  bounciness: 0.3
   frictionCombine: 0
   bounceCombine: 3
