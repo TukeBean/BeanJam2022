@@ -17,10 +17,12 @@ public class CubeController : MonoBehaviour
     [Tooltip("What layers the character uses as ground")]
     public LayerMask GroundLayers;
 
+
     // Start is called before the first frame update
     void Start()
     {
         mRigidBody = GetComponent<Rigidbody>();
+        GroundLayers = LayerMask.GetMask("Ground");
     }
 
     // Update is called once per frame
