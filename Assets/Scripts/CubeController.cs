@@ -41,19 +41,23 @@ public class CubeController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W)) 
         { 
-            mRigidBody.AddTorque(torqueLit, 100, 0,ForceMode.Impulse);
+            mRigidBody.AddTorque(torqueLit, 100, 0,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.forward * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.A)) 
         { 
-            mRigidBody.AddTorque(0, 100, torqueLit);
+            mRigidBody.AddTorque(0, 100, torqueLit,ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.left * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.S)) 
         { 
-            mRigidBody.AddTorque(-torqueLit, 100, 0);
+            mRigidBody.AddTorque(-torqueLit, 100, 0, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.back * 0.01f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.D)) 
         { 
-            mRigidBody.AddTorque(0, 100, -torqueLit);
+            mRigidBody.AddTorque(0, 100, -torqueLit, ForceMode.VelocityChange);
+            mRigidBody.AddForce(Vector3.right * 0.01f, ForceMode.VelocityChange);
         }
 
         //reset button
