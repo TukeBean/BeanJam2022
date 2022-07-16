@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
+    public ForceMode forceMode = ForceMode.VelocityChange;
     Vector3 START_POSITION = new Vector3(6, 3, 0);
     public int torqueForce = 100;
     public float jumpForce = 4.5f;
@@ -37,29 +38,29 @@ public class CubeController : MonoBehaviour
         // JUMP
         if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
         { 
-            mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, ForceMode.VelocityChange);
+            mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, forceMode);
         }
 
         // WASD MOVEMENT
         if (Input.GetKey(KeyCode.W)) 
         { 
-            mRigidBody.AddTorque(torqueForce, torqueForce, 0,ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.forward * moveSpeed, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(torqueForce, torqueForce, 0,forceMode);
+            mRigidBody.AddForce(Vector3.forward * moveSpeed, forceMode);
         }
         if (Input.GetKey(KeyCode.A)) 
         { 
-            mRigidBody.AddTorque(0, torqueForce, torqueForce,ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.left * moveSpeed, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(0, torqueForce, torqueForce,forceMode);
+            mRigidBody.AddForce(Vector3.left * moveSpeed, forceMode);
         }
         if (Input.GetKey(KeyCode.S)) 
         { 
-            mRigidBody.AddTorque(-torqueForce, torqueForce, 0, ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.back * moveSpeed, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(-torqueForce, torqueForce, 0, forceMode);
+            mRigidBody.AddForce(Vector3.back * moveSpeed, forceMode);
         }
         if (Input.GetKey(KeyCode.D)) 
         { 
-            mRigidBody.AddTorque(0, torqueForce, -torqueForce, ForceMode.VelocityChange);
-            mRigidBody.AddForce(Vector3.right * moveSpeed, ForceMode.VelocityChange);
+            mRigidBody.AddTorque(0, torqueForce, -torqueForce, forceMode);
+            mRigidBody.AddForce(Vector3.right * moveSpeed, forceMode);
         }
 
         //reset button
