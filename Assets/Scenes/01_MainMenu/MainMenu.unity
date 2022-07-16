@@ -1108,7 +1108,6 @@ GameObject:
   - component: {fileID: 576481562}
   - component: {fileID: 576481561}
   - component: {fileID: 576481565}
-  - component: {fileID: 576481566}
   - component: {fileID: 576481567}
   m_Layer: 0
   m_Name: Main Camera
@@ -1229,18 +1228,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3609e35e462584459bfb2715afba3d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &576481566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576481560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91658cae06997e8438ce6ff4ba8d1d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &576481567
@@ -2175,7 +2162,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.3773585, g: 0, b: 0, a: 1}
-  m_Intensity: 9.88
+  m_Intensity: 1.18
   m_Range: 339.79285
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2217,7 +2204,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 7.77
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}

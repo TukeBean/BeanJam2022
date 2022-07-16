@@ -695,15 +695,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: BeanWare Games
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec0261bc6ddd86e45b4b6df89da96327, type: 2}
+  m_sharedMaterial: {fileID: -6262361997089253844, guid: ec0261bc6ddd86e45b4b6df89da96327,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1769305599
-  m_fontColor: {r: 1, g: 0.4575472, b: 0.4575472, a: 0.4117647}
+    rgba: 4282999155
+  m_fontColor: {r: 0.45098042, g: 0.3803922, b: 0.28627452, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
