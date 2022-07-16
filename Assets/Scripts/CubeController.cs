@@ -41,7 +41,7 @@ public class CubeController : MonoBehaviour
         // JUMP
         if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
         { 
-            mRigidBody.AddForce(Vector3.up + mRigidBody.velocity.normalized * jumpForce, forceMode);
+            
             if (mRigidBody.velocity.magnitude < 5)
         {
             mRigidBody.AddForce(new Vector3(0f,chungus,0f) + (mRigidBody.velocity * jumpForce), forceMode);
