@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         thisText = GameObject.Find("CC").GetComponent<Text>();
+        thisText.text = CollectableCount + "/" + CollectableMax;
     }
 
     // Update is called once per frame
