@@ -14,10 +14,8 @@ public class CubeController : MonoBehaviour
     public bool Grounded = true;
     [Tooltip("Useful for rough ground")]
     public float GroundedOffset = 0.15f;
-
     [Tooltip("What layers the character uses as ground")]
     public LayerMask GroundLayers;
-
 
     // Start is called before the first frame update
     void Start()
