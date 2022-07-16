@@ -7,8 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CubeMatBounce
-  dynamicFriction: 1
-  staticFriction: 3.87
-  bounciness: 0.3
+  dynamicFriction: 50
+  staticFriction: 10
+  bounciness: 0.1
   frictionCombine: 0
-  bounceCombine: 3
+  bounceCombine: 0
