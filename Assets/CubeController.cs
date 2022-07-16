@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
+    Vector3 START_POSITION = new Vector3(6, 3, 0);
     public int torqueLit = 100;
     Rigidbody mRigidBody;
     // Start is called before the first frame update
@@ -36,6 +37,14 @@ public class CubeController : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) 
         { 
             mRigidBody.AddTorque(0, 100, -torqueLit);
+        }
+
+        //reset button
+        if (Input.GetKey(KeyCode.R)) 
+        { 
+            mRigidBody.MovePosition(START_POSITION);
+            //velocity needs set to zero or you'll keep your momentum
+            mRigidBody.velocity = new Vector3(0,0,0);
         }
     }
 }
