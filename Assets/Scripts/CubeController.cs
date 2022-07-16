@@ -38,7 +38,7 @@ public class CubeController : MonoBehaviour
         // JUMP
         if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
         { 
-            mRigidBody.AddForce(mRigidBody.velocity.normalized * jumpForce, forceMode);
+            mRigidBody.AddForce(Vector3.up + mRigidBody.velocity.normalized * jumpForce, forceMode);
         }
 
         // WASD MOVEMENT
