@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
-    guid: e9017d5f96b9f09489b4b37e1d6eb914
+    path: Assets/Scenes/00_SplashScreen/SplashScreen.unity
+    guid: 2f2e7ab2055fa1f4e87f83ddae1c59b1
+  - enabled: 1
+    path: Assets/Scenes/01_MainMenu/MainMenu.unity
+    guid: 1e54104a5d8738c4381f4a65d3bfcd70
+  - enabled: 1
+    path: Assets/Scenes/02_Levels/levelOne.unity
+    guid: 3708bd661868a2d41aaf3da6f4569217
+  - enabled: 1
+    path: Assets/Scenes/03_Credits/Credits.unity
+    guid: 6f04a449fe98e9e4787dbe09d513357c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
