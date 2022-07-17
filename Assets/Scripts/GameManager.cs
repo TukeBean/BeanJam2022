@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         thisText = GameObject.Find("CC").GetComponent<Text>();
-        thisText.text = "Chips: " + CollectableCount;
+        thisText.text = "Chips " + CollectableCount;
     }
 
     // Update is called once per frame
@@ -30,13 +30,13 @@ public class GameManager : MonoBehaviour
     {
         CollectableCount++;
         Debug.Log(CollectableCount);
-        thisText.text = "Chips: " + CollectableCount;
+        thisText.text = "Chips " + CollectableCount;
     }
 
         public void resetCollectable()
     {
         CollectableCount = 0;
         Debug.Log(CollectableCount);
-        thisText.text = "Chips: " + CollectableCount;
+        thisText.text = "Chips " + CollectableCount;
     }
 }

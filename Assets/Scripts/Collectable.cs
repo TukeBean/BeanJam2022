@@ -33,7 +33,6 @@ public class Collectable : MonoBehaviour
          {
             GameManager.instance.collectedCollectable();
             gameObject.SetActive(false);
-         }
-            
+         } 
     }
 }
