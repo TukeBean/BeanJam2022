@@ -22,9 +22,9 @@ public class CollectablesManager : MonoBehaviour
         }
     }
 
-    public void NextCheckpoint()
+    public void NextCheckpoint(int name)
     {
-        checkpoint++;
+        checkpoint = name;
     }
 
     public void resetCollectables()

@@ -7,7 +7,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public int CollectableMax = 5;
     private int CollectableCount = 0;
     private Text thisText;

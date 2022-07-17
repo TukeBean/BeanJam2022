@@ -10,6 +10,12 @@ public class CubeController : MonoBehaviour
     public float jumpForce = 4.5f;
     public float moveSpeed = 0.008f;
     public float chungus = 2f;
+    public CollectablesManager colManager;
+    public GameObject endScreen;
+
+    public GameObject onscreenText1;
+    public GameObject onscreenText2;
+
     Rigidbody mRigidBody;
 
     [Header("Player Grounded")]
@@ -33,7 +39,6 @@ public class CubeController : MonoBehaviour
     {
         GroundedCheck();
         Move();
-        
     }
 
     void OnTriggerEnter(Collider collider)
@@ -42,11 +47,20 @@ public class CubeController : MonoBehaviour
             resetPos();
         }
         if(collider.gameObject.tag=="checkpoint"){
-            updatePos();
+            string checkpointName = collider.gameObject.name;
+            updatePos(checkpointName);
+        }
+        if(collider.gameObject.tag=="endpoint"){
+            endGame();
         }
     }
 
-
+    void endGame(){
+        // activate attached gameObject
+        endScreen.SetActive(true); 
+        onscreenText1.SetActive(false);
+        onscreenText2.SetActive(false);
+    }
     private void Move()
     {
 
@@ -95,12 +109,16 @@ public class CubeController : MonoBehaviour
 
     void resetPos(){
         mRigidBody.MovePosition(START_POSITION);
-            //velocity needs set to zero or you'll keep your momentum
-            mRigidBody.velocity = new Vector3(0, 0, 0);
+        //velocity needs set to zero or you'll keep your momentum
+        mRigidBody.velocity = new Vector3(0, 0, 0);
+        colManager.resetCollectables();
     }
 
-    void updatePos(){
+    // when the checkpoint is hit
+    void updatePos(string checkpointName){
+
          START_POSITION = transform.position;
+         colManager.NextCheckpoint(int.Parse(checkpointName));
     }
 
     void GroundedCheck()
