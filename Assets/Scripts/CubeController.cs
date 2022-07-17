@@ -37,55 +37,57 @@ public class CubeController : MonoBehaviour
 
     private void Move()
     {
-         
+
         // JUMP
-        if (Grounded && Input.GetKeyDown(KeyCode.Space)) 
-        { 
-            
+        if (Grounded && Input.GetKeyDown(KeyCode.Space))
+        {
+
             if (mRigidBody.velocity.magnitude < 5)
-        {
-            mRigidBody.AddForce(new Vector3(0f,chungus,0f) + (mRigidBody.velocity * jumpForce), forceMode);
-        } else
-        {
-            mRigidBody.AddForce((mRigidBody.velocity.normalized * jumpForce), forceMode);
-        }
+            {
+                mRigidBody.AddForce(new Vector3(0f, chungus, 0f) + (mRigidBody.velocity * jumpForce), forceMode);
+            }
+            else
+            {
+                mRigidBody.AddForce((mRigidBody.velocity.normalized * jumpForce), forceMode);
+            }
         }
 
         // WASD MOVEMENT
-        if (Input.GetKey(KeyCode.W)) 
-        { 
-            mRigidBody.AddTorque(torqueForce, torqueForce, 0,forceMode);
+        if (Input.GetKey(KeyCode.W))
+        {
+            mRigidBody.AddTorque(torqueForce, torqueForce, 0, forceMode);
             mRigidBody.AddForce(Vector3.forward * moveSpeed, forceMode);
         }
-        if (Input.GetKey(KeyCode.A)) 
-        { 
-            mRigidBody.AddTorque(0, torqueForce, torqueForce,forceMode);
+        if (Input.GetKey(KeyCode.A))
+        {
+            mRigidBody.AddTorque(0, torqueForce, torqueForce, forceMode);
             mRigidBody.AddForce(Vector3.left * moveSpeed, forceMode);
         }
-        if (Input.GetKey(KeyCode.S)) 
-        { 
+        if (Input.GetKey(KeyCode.S))
+        {
             mRigidBody.AddTorque(-torqueForce, torqueForce, 0, forceMode);
             mRigidBody.AddForce(Vector3.back * moveSpeed, forceMode);
         }
-        if (Input.GetKey(KeyCode.D)) 
-        { 
+        if (Input.GetKey(KeyCode.D))
+        {
             mRigidBody.AddTorque(0, torqueForce, -torqueForce, forceMode);
             mRigidBody.AddForce(Vector3.right * moveSpeed, forceMode);
         }
 
         //reset button
-        if (Input.GetKey(KeyCode.R)) 
-        { 
+        if (Input.GetKey(KeyCode.R))
+        {
             mRigidBody.MovePosition(START_POSITION);
             //velocity needs set to zero or you'll keep your momentum
-            mRigidBody.velocity = new Vector3(0,0,0);
+            mRigidBody.velocity = new Vector3(0, 0, 0);
         }
     }
 
-    void GroundedCheck(){
+    void GroundedCheck()
+    {
         Vector3 dicePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
                 transform.position.z);
-        Vector3 diceScale = transform.localScale/2;
+        Vector3 diceScale = transform.localScale / 2;
         Quaternion diceRotation = transform.rotation;
 
         Grounded = Physics.CheckBox(dicePosition, diceScale, diceRotation, GroundLayers);
