@@ -1598,7 +1598,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: levelOne
+          m_StringArgument: Combination Level
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &803344366
@@ -3792,7 +3792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tutorial
+  m_text: Help
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec0261bc6ddd86e45b4b6df89da96327, type: 2}
   m_sharedMaterial: {fileID: -6262361997089253844, guid: ec0261bc6ddd86e45b4b6df89da96327,

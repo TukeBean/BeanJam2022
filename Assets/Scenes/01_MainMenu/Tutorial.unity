@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 139380620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.86243, y: 0.82491, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1592871427}
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Control the Dice. \nGet Chips. \nDo not fall off. \n\nR to Reset\nEscape
-    for main menu"
+    for main menu\nSpace to jump\nwasd to move"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec0261bc6ddd86e45b4b6df89da96327, type: 2}
   m_sharedMaterial: {fileID: -6262361997089253844, guid: ec0261bc6ddd86e45b4b6df89da96327,
