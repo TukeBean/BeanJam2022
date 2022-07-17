@@ -33,6 +33,14 @@ public class CubeController : MonoBehaviour
     {
         GroundedCheck();
         Move();
+        
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag=="deathCube"){
+            resetPos();
+        }
     }
 
     private void Move()
@@ -77,10 +85,14 @@ public class CubeController : MonoBehaviour
         //reset button
         if (Input.GetKey(KeyCode.R))
         {
-            mRigidBody.MovePosition(START_POSITION);
+            resetPos();
+        }
+    }
+
+    void resetPos(){
+        mRigidBody.MovePosition(START_POSITION);
             //velocity needs set to zero or you'll keep your momentum
             mRigidBody.velocity = new Vector3(0, 0, 0);
-        }
     }
 
     void GroundedCheck()
