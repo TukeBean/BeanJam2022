@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - deathCube
+  - checkpoint
   layers:
   - Default
   - TransparentFX
