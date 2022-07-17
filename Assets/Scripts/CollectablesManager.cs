@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollectablesManager : MonoBehaviour
 {
     public GameObject[] Collectables;
+    public int checkpoint = 0;
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +18,29 @@ public class CollectablesManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R)) 
         { 
-            foreach(GameObject collectable in Collectables)
-                collectable.SetActive(true);
+            for (int i = 0; i < Collectables[checkpoint].transform.childCount; i++)
+            {
+                Collectables[checkpoint].transform.GetChild(i).gameObject.SetActive(true);
+            }
 
-            GameManager.instance.resetCollectable();
+            score = 0;
+            for (int i = 0; i < checkpoint; i++)
+            {
+                for (int j = 0; j < Collectables[i].transform.childCount; j++)
+                {
+                    if(!Collectables[i].transform.GetChild(j).gameObject.active)
+                        score++;
+                }
+            }
+
+            // foreach(GameObject collectable in Collectables.)
+            //     collectable.SetActive(true);
+
+            GameManager.instance.resetCollectable(score);
         }
+    }
+
+    public void NextCheckpoint(){
+        checkpoint++;
     }
 }

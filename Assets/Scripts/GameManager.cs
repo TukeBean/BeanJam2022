@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour
         thisText.text = "Chips " + CollectableCount;
     }
 
-        public void resetCollectable()
+        public void resetCollectable(int score)
     {
-        CollectableCount = 0;
+        CollectableCount = score;
         Debug.Log(CollectableCount);
         thisText.text = "Chips " + CollectableCount;
     }
