@@ -41,7 +41,11 @@ public class CubeController : MonoBehaviour
         if(collider.gameObject.tag=="deathCube"){
             resetPos();
         }
+        if(collider.gameObject.tag=="checkpoint"){
+            updatePos();
+        }
     }
+
 
     private void Move()
     {
@@ -93,6 +97,10 @@ public class CubeController : MonoBehaviour
         mRigidBody.MovePosition(START_POSITION);
             //velocity needs set to zero or you'll keep your momentum
             mRigidBody.velocity = new Vector3(0, 0, 0);
+    }
+
+    void updatePos(){
+         START_POSITION = transform.position;
     }
 
     void GroundedCheck()
