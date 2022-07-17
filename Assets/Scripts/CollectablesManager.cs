@@ -18,7 +18,18 @@ public class CollectablesManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R)) 
         { 
-            for (int i = 0; i < Collectables[checkpoint].transform.childCount; i++)
+            resetCollectables();
+        }
+    }
+
+    public void NextCheckpoint()
+    {
+        checkpoint++;
+    }
+
+    public void resetCollectables()
+    {
+        for (int i = 0; i < Collectables[checkpoint].transform.childCount; i++)
             {
                 Collectables[checkpoint].transform.GetChild(i).gameObject.SetActive(true);
             }
@@ -37,10 +48,5 @@ public class CollectablesManager : MonoBehaviour
             //     collectable.SetActive(true);
 
             GameManager.instance.resetCollectable(score);
-        }
-    }
-
-    public void NextCheckpoint(){
-        checkpoint++;
     }
 }
